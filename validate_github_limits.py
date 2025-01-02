@@ -11,6 +11,10 @@ from pathlib import Path
 from datetime import datetime
 from typing import Optional, Dict, List
 
+REPO_DIR = "../"
+LARGE_BACKUP_DIR = "/media/data2"
+FLAG_AUTOMOVE_LARGE = True
+
 # GitHub Platform Limits
 MAX_GITHUB_FILESIZE_MB = 100
 MAX_GITHUB_FILESIZE_WARNING_MB = 50 
@@ -138,9 +142,6 @@ class GitHubValidator:
 
 def main():
    """Entry point for repository validation."""
-   REPO_DIR = "../"
-   LARGE_BACKUP_DIR = "/media/data2"
-   FLAG_AUTOMOVE_LARGE = True
 
    validator = GitHubValidator(REPO_DIR, LARGE_BACKUP_DIR, FLAG_AUTOMOVE_LARGE)
    validator.validate()
