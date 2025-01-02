@@ -79,7 +79,7 @@ class GitHubValidator:
                 logging.info("✓ No files exceed size limits")
         except Exception as e:
             logging.error(f"File size check error: {e}")
-            raise 
+            raise
 
     def _handle_file_size(self, path: Path, size_mb: float) -> None:
         rel_path = path.relative_to(self.repo_dir)
@@ -141,7 +141,7 @@ class GitHubValidator:
         except Exception as e:
             logging.error(f"Directory check error: {e}")
             raise
- 
+
     def check_repo_size(self) -> None:
         """Calculate and validate total repository size."""
         self.log_header("REPOSITORY SIZE")
